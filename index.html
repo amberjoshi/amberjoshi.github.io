@@ -1,1 +1,352 @@
-"Hello world" 
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/price-range.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #ff8c00;
+  width:100%;
+  padding:15px;
+position:relative;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 30px;
+  width:25%;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 10px;
+  margin-top: 10px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.container {
+  display: table;
+  width: 100%;
+}
+.right-border{
+right-border:1px solid black;
+}
+
+.left-half {
+  background-color: #ff9e2c;
+  position: relative;
+  left: 0px;
+  width: 50%;
+}
+.main_table{
+vertical-align:top;	
+padding:5px;
+}
+.right-half {
+  background-color: #b6701e;
+  position: relative;
+  right: 0px;
+  width: 50%;
+}
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+</style>
+<title>Assignment Site</title>
+<script>
+function fn()
+{
+var id="mymy";
+var acc=document.getElementById(id);
+var divs=acc.getElementsByTagName('div');
+var elems=acc.getElementsByTagName('span');
+for(var i=0;i<elems.length;i+=1)
+{
+elems[i].style.display='block';
+divs[i].style.display='none';
+elems[i].onclick=divOnclickHandler(i,id);
+}
+}
+function divOnclickHandler(i,id)
+{
+return function() {
+var acc=document.getElementById(id);
+var divs=acc.getElementsByTagName('div');
+var spans=acc.getElementsByTagName('span')[i];
+var img=spans.getElementsByTagName('img')[0];
+console.log(img.src);
+console.log(img.src=='http://localhost:8080/testing/upArrow.png');
+if(img.src=="http://localhost:8080/testing/upArrow.png") img.src="http://localhost:8080/testing/downArrow.png";
+else img.src="http://localhost:8080/testing/upArrow.png";
+for(var j=0;j<divs.length;j++)
+{
+if(j==i) 
+{
+if(divs[j].style.display=='block') divs[j].style.display='none';
+else divs[j].style.display='block';
+}
+//else divs[j].style.display='none';
+}
+}
+}
+window.addEventListener('load',fn);
+</script>
+</head>
+<body>
+<div><img src="micromax_logo.jpg"></img><img style="float:right" src="shopping_cart.png"></img></div>
+<div class="topnav">
+  <a href="#home" >Home</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <div class="search-container">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit">Search</button>
+  </div>
+</div>
+
+
+<table>
+<tr>
+<td class="main_table">
+<div id='mymy' style="top:0%" class>
+<span id="categories_span" style="border:1px solid black;padding:20px"><img src="upArrow.png"></img><h3 style="display:inline">    Categories</h3></span>
+<div>
+<table>
+<tr><img src="bullet_icon.png"/>  Keypad</tr><hr>
+<tr><img src="bullet_icon.png"/>  Smartponone</tr><hr>
+<tr><img src="bullet_icon.png"/>  FlipPhone</tr><hr>
+</table>
+</div>
+<span id="bestsellers_span" style="border:1px solid black;padding:20px"><img src="upArrow.png"></img><h3 style="display:inline">       Bestsellers</h3></span>
+<div>
+<table>
+<tr><img src="bullet_icon.png"/>  A33 Smarphone</tr><hr>
+<tr><img src="bullet_icon.png"/>  Marathon 360</tr><hr>
+<tr><img src="bullet_icon.png"/>  c2 Long Lasting</tr><hr>
+</table>
+</div>
+<span style="border:1px solid black;padding:20px"><img src="upArrow.png"></img><h3 style="display:inline">       What's New</h3></span>
+<div>
+<img src="phone1.jpg" style="width:400px;height:450px"/>
+</div>
+</div>
+
+
+
+</td>
+
+
+<td>
+<table id="phone-table">
+
+
+<tr id="row1">
+
+<td id="phone1">
+<table>
+<tr><u><b>Micormax css black</u></b><br></tr>
+<tr><img src="phone1.jpg" style="width:400px;height:450px"></img> </tr>
+<tr>
+<td class="col-md-6 right-border">
+<h4>Price</h4>
+<h2>Rs.5,746/-</h2>
+  </td>
+  <td>
+<a>details</a><br>
+<button>Buy Now</button>
+  </td>
+</tr>
+</table>
+</td>
+
+<td id="phone2">
+<table>
+<tr><u><b>Micormax css black</u></b><br></tr>
+<tr><img src="phone1.jpg" style="width:400px;height:450px"></img> </tr>
+<tr>
+<td class="col-md-6 right-border">
+<h4>Price</h4>
+<h2>Rs.5,746/-</h2>
+  </td>
+  <td>
+<a>details</a><br>
+<button>Buy Now</button>
+  </td>
+</tr>
+</table>
+</td>
+
+<td id="phone3">
+<table>
+<tr><u><b>Micormax css black</u></b><br></tr>
+<tr><img src="phone1.jpg" style="width:400px;height:450px"></img> </tr>
+<tr>
+<td class="col-md-6 right-border">
+<h4>Price</h4>
+<h2>Rs.5,746/-</h2>
+  </td>
+  <td>
+<a>details</a><br>
+<button>Buy Now</button>
+  </td>
+</tr>
+</table>
+</td>
+
+<td id="phone4">
+<table>
+<tr><u><b>Micormax css black</u></b><br></tr>
+<tr><img src="phone1.jpg" style="width:400px;height:450px"></img> </tr>
+<tr>
+<td class="col-md-6 right-border">
+<h4>Price</h4>
+<h2>Rs.5,746/-</h2>
+  </td>
+  <td>
+<a>details</a><br>
+<button>Buy Now</button>
+  </td>
+</tr>
+</table>
+</td>
+
+
+
+</tr> 
+
+
+<tr id="row2">
+
+<td id="phone1">
+<table>
+<tr><u><b>Micormax css black</u></b><br></tr>
+<tr><img src="phone1.jpg" style="width:400px;height:450px"></img> </tr>
+<tr>
+<td class="col-md-6 right-border">
+<h4>Price</h4>
+<h2>Rs.5,746/-</h2>
+  </td>
+  <td>
+<a>details</a><br>
+<button>Buy Now</button>
+  </td>
+</tr>
+</table>
+</td>
+
+<td id="phone2">
+<table>
+<tr><u><b>Micormax css black</u></b><br></tr>
+<tr><img src="phone1.jpg" style="width:400px;height:450px"></img> </tr>
+<tr>
+<td class="col-md-6 right-border">
+<h4>Price</h4>
+<h2>Rs.5,746/-</h2>
+  </td>
+  <td>
+<a>details</a><br>
+<button>Buy Now</button>
+  </td>
+</tr>
+</table>
+</td>
+
+<td id="phone3">
+<table>
+<tr><u><b>Micormax css black</u></b><br></tr>
+<tr><img src="phone1.jpg" style="width:400px;height:450px"></img> </tr>
+<tr>
+<td class="col-md-6 right-border">
+<h4>Price</h4>
+<h2>Rs.5,746/-</h2>
+  </td>
+  <td>
+<a>details</a><br>
+<button>Buy Now</button>
+  </td>
+</tr>
+</table>
+</td>
+
+<td id="phone4">
+<table>
+<tr><u><b>Micormax css black</u></b><br></tr>
+<tr><img src="phone1.jpg" style="width:400px;height:450px"></img> </tr>
+<tr>
+<td class="col-md-6 right-border">
+<h4>Price</h4>
+<h2>Rs.5,746/-</h2>
+  </td>
+  <td>
+<a>details</a><br>
+<button>Buy Now</button>
+  </td>
+</tr>
+</table>
+</td>
+
+
+
+
+</tr> 
+
+
+
+
+</table>
+</td>
+</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
